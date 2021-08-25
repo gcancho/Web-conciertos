@@ -108,8 +108,32 @@ html {
 }
 body {
   background-color: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
 }
-
+/** Globales **/
+.contenedor {
+  width: 98%;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  .contenedor {
+    width: 95%;
+  }
+}
+@media (min-width: 768px) {
+  .contenedor {
+    width: 90%;
+  }
+}
+@media (min-width: 992px) {
+  .contenedor {
+    width: 90%;
+    max-width: 1100px;
+  }
+}
+h2 {
+  font-family: "Oswald", sans-serif;
+}
 /** Header **/
 div.hero {
   background-image: url(../img/encabezado.jpg);
@@ -155,6 +179,8 @@ div.informacion-evento p {
 }
 div.informacion-evento p i {
   color: #fe4918;
+  font-size: 2rem;
+  margin-right: 10px;
 }
 p.fecha {
   float: left;
@@ -162,6 +188,107 @@ p.fecha {
 p.ciudad {
   float: right;
   text-align: right;
+}
+p.slogan {
+  text-transform: none !important;
+}
+p.slogan span {
+  font-weight: bold;
+}
+h1.nombre-sitio {
+  font-size: 5.9vw;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+}
+@media (min-width: 768px) {
+  h1.nombre-sitio {
+    font-size: 10.5vw;
+    margin: 0;
+    line-height: 1;
+  }
+}
+
+/** Barra **/
+div.barra {
+  background-color: #353535;
+  padding: 20px 0;
+}
+div.logo {
+  width: 80%;
+  float: left;
+}
+div.logo img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  div.logo {
+    width: 33%;
+  }
+}
+
+/** Nav Principal **/
+nav.navegacion-principal {
+  display: none;
+}
+nav.navegacion-principal a {
+  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+nav.navegacion-principal a:hover {
+  background-color: #fe4918;
+}
+nav.navegacion-principal a:last-child {
+  color: #fe4918;
+  border: 2px solid #fe4918;
+}
+nav.navegacion-principal a:last-child:hover {
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  nav.navegacion-principal {
+    width: 67%;
+    float: right;
+    text-align: right;
+    display: block;
+  }
+  nav.navegacion-principal a {
+    padding: 10px 10px;
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    margin: 0 10px 0 0;
+  }
+}
+
+/** Menu Movil **/
+div.menu-movil {
+  width: 60px;
+  display: block;
+  float: right;
+  text-align: right;
+  margin-top: 12px;
+}
+div.menu-movil:hover {
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  div.menu-movil {
+    display: none;
+  }
+}
+div.menu-movil span {
+  height: 8px;
+  margin-bottom: 6px;
+  background-color: #ffffff;
+  display: block;
 }
 
 /* ==========================================================================
