@@ -33,52 +33,9 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <header class="site-header">
-    <div class="hero">
-      <div class="contenido-header">
-        <nav class="redes-sociales">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-pinterest"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </nav>
-        <div class="informacion-evento">
-          <div class="clearfix">
-            <p class="fecha"><i class="fas fa-calendar-alt"></i>10-12 Dic</p>
-            <p class="ciudad"><i class="fas fa-map-marker-alt"></i>Lima, PE</p>
-          </div>
-          <h1 class="nombre-sitio">LimaWebCamp</h1>
-          <p class="slogan">La mejor conferencia <span>diseño web</span></p>
-        </div>
-        <!--informacion-evento-->
-      </div>
-    </div>
-    <!--hero-->
-  </header>
+  <?php include_once 'includes/templates/header.php' ?>
 
-  <div class="barra">
-    <div class="contenedor clearfix">
-      <div class="logo">
-        <img src="img/logo.svg" alt="logo gdlwebcamp">
-      </div>
 
-      <div class="menu-movil">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav class="navegacion-principal">
-        <a href="#">Conferencia</a>
-        <a href="#">Calendario</a>
-        <a href="#">Invitados</a>
-        <a href="registro.html">Reservaciones</a>
-      </nav>
-    </div>
-    <!--.contenedor-->
-  </div>
-  <!--.barra-->
 
   <section class="seccion contenedor">
     <h2>La mejor conferencia de diseño web en español</h2>
@@ -295,21 +252,8 @@
       </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="contenedor clearfix">
-      <div class="footer-informacion">
-        <h3>Sobre<span>limawebcamp</span></h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-      <div class="ultimos-tweets">
-        <h3>Ultimos<span>tweets</span></h3>
-        <ul>
-          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, assumenda.</li>
-          <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, assumenda.</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <?php include_once 'includes/templates/footer.php' ?>
+  
   
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
