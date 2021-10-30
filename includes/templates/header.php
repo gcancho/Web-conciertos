@@ -59,21 +59,21 @@
         <header class="site-header">
             <div class="hero">
                 <div class="contenido-header">
-                    <nav class="redes-sociales">
+                    <!-- <nav class="redes-sociales">
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </nav>
+                    </nav> -->
                     <div class="informacion-evento">
                         <div class="clearfix">
-                            <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 10-12 Dic</p>
-                            <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Guadalajara, MX</p>
+                            <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 2021 </p>
+                            <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Lima, Perú</p>
                         </div>
 
-                        <h1 class="nombre-sitio">GdlWebCamp</h1>
-                        <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
+                        <h1 class="nombre-sitio">Reactivate Lima</h1>
+                        <p class="slogan">Eventos y conciertos <span>en Lima</span></p>
                     </div> <!--.informacion-evento-->
                 </div>
             </div><!--.hero-->
@@ -83,7 +83,7 @@
             <div class="contenedor clearfix">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="img/logo.svg" alt="logo gdlwebcamp">
+                        <img src="img/logo.svg" alt="Logo Reactiva Lima" width="60px" height="60px">
                     </a>
                 </div>
 
@@ -94,10 +94,10 @@
                 </div>
 
                 <nav class="navegacion-principal clearfix">
-                    <a href="conferencia.php">Conferencia</a>
+                    <a href="conferencia.php">Eventos</a>
                     <a href="calendario.php">Calendario</a>
-                    <a href="invitados.php">Invitados</a>
-                    <a href="registro.php">Reservaciones</a>
+                    <a href="invitados.php">Artistas</a>
+                    <a href="registro.php">Registrate</a>
                 </nav>
             </div><!--.contenedor-->
         </div> <!--.barra-->

@@ -78,12 +78,7 @@
       <!--#paquetes-->
 
 
-      <div id="eventos" class="eventos clearfix">
-        <h3>Elige tus talleres</h3>
-        <div class="caja">
-        </div>
-        <!--.caja-->
-      </div>
+     
       <!--#eventos-->
 
       <div id="resumen" class="resumen">
@@ -91,14 +86,14 @@
         <div class="caja clearfix">
           <div class="extras">
             <div class="orden">
-              <label for="camisa_evento">Camisa del evento $10 <small>(promocion 7% dto.)</small></label>
+              <label for="camisa_evento">Camisa del evento S/10 <small>(promocion 7% dto.)</small></label>
               <input type="number" min="0" id="camisa_evento" name="pedido_extra[camisas][cantidad]" size="3"
                 placeholder="0">
               <input type="hidden" value="10" name="pedido_extra[camisas][precio]">
             </div>
             <!--.orden-->
             <div class="orden">
-              <label for="etiquetas">Paquete de 10 etiquetas $2 <small>(HTML5, CSS3, JavaScript, Chrome)</small></label>
+              <label for="etiquetas">Paquete de pulseras S/5 <small></small></label>
               <input type="number" min="0" id="etiquetas" name="pedido_extra[etiquetas][cantidad]" size="3"
                 placeholder="0">
               <input type="hidden" value="2" name="pedido_extra[etiquetas][precio]">

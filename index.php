@@ -1,273 +1,159 @@
-<!doctype html>
-<html class="no-js" lang="">
+<?php include_once 'includes/templates/header.php'; ?>
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <section class="seccion contenedor">
+            <h2>El mejor sitio web para conciertos dentro de Lima</h2>
+            <p>
+              Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.
+            </p>
+        </section> <!--seccion-->
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+        <section class="programa">
+            <div class="contenedor-video">
+                <video autoplay loop muted poster="img/bg-talleres.jpg">
+                    <source src="video/video.mp4" type="video/mp4">
+                    <source src="video/video.webm" type="video/webm">
+                    <source src="video/video.ogv" type="video/ogg">
+                </video>
+            </div> <!--.contenedor-video-->
+            <div class="contenido-programa">
+                <div class="contenedor">
+                    <div class="programa-evento">
+                        <h2>Programa del Evento</h2>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+                        <?php
+                            try {
+                              require_once('includes/funciones/bd_conexion.php');
+                              $sql = "SELECT * FROM `categoria_evento` ";
+                              $resultado = $conn->query($sql);
+                            } catch (Exception $e) {
+                              $error = $e->getMessage();
+                            }
+                         ?>
+                        <nav class="menu-programa">
+                          <?php while($cat = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+                            <?php $categoria = $cat['cat_evento']; ?>
+                                <a href="#<?php echo strtolower($categoria) ?>">
+                                      <i class="fa <?php echo $cat['icono'] ?>" aria-hidden="true"></i> <?php echo $categoria ?>
+                                </a>
+                          <?php } ?>
+                        </nav>
 
-  <meta name="theme-color" content="#fafafa">
-  <!-- Nuevo Link de fontawesome (actualizado)-->
-  <script src="https://kit.fontawesome.com/a21ee4ed16.js" crossorigin="anonymous"></script>
+                        <?php
+                            try {
+                              require_once('includes/funciones/bd_conexion.php');
+                              $sql = "SELECT `evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `cat_evento`, `nombre_invitado`, `apellido_invitado` ";
+                              $sql .= "FROM `eventos` ";
+                              $sql .= "INNER JOIN `categoria_evento` ";
+                              $sql .= "ON eventos.id_cat_evento=categoria_evento.id_categoria ";
+                              $sql .= "INNER JOIN `invitados` ";
+                              $sql .= "ON eventos.id_inv=invitados.invitado_id ";
+                              $sql .= "AND eventos.id_cat_evento = 1 ";
+                              $sql .= "ORDER BY `evento_id` LIMIT 2;";
+                              $sql .= "SELECT `evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `cat_evento`, `nombre_invitado`, `apellido_invitado` ";
+                              $sql .= "FROM `eventos` ";
+                              $sql .= "INNER JOIN `categoria_evento` ";
+                              $sql .= "ON eventos.id_cat_evento=categoria_evento.id_categoria ";
+                              $sql .= "INNER JOIN `invitados` ";
+                              $sql .= "ON eventos.id_inv=invitados.invitado_id ";
+                              $sql .= "AND eventos.id_cat_evento = 2 ";
+                              $sql .= "ORDER BY `evento_id` LIMIT 2;";
+                              $sql .= "SELECT `evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `cat_evento`, `nombre_invitado`, `apellido_invitado` ";
+                              $sql .= "FROM `eventos` ";
+                              $sql .= "INNER JOIN `categoria_evento` ";
+                              $sql .= "ON eventos.id_cat_evento=categoria_evento.id_categoria ";
+                              $sql .= "INNER JOIN `invitados` ";
+                              $sql .= "ON eventos.id_inv=invitados.invitado_id ";
+                              $sql .= "AND eventos.id_cat_evento = 3 ";
+                              $sql .= "ORDER BY `evento_id` LIMIT 2;";
+                            } catch (Exception $e) {
+                              $error = $e->getMessage();
+                            }
+                         ?>
 
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Oswald:wght@200;400;500;700&family=PT+Sans:wght@400;700&display=swap"
-    rel="stylesheet">
+                        <?php $conn->multi_query($sql); ?>
 
-</head>
+                        <?php
+                            do {
+                                $resultado = $conn->store_result();
+                                $row = $resultado->fetch_all(MYSQLI_ASSOC);    ?>
 
-<body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+                                <?php $i = 0; ?>
+                                <?php foreach($row as $evento): ?>
+                                  <?php if($i % 2 == 0) { ?>
+                                    <div id="<?php echo strtolower($evento['cat_evento']) ?>" class="info-curso ocultar clearfix">
+                                  <?php } ?>
+                                          <div class="detalle-evento">
+                                              <h3><?php echo html_entity_decode($evento['nombre_evento']) ?></h3>
+                                              <p><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $evento['hora_evento']; ?></p>
+                                              <p><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo $evento['fecha_evento']; ?></p>
+                                              <p><i class="fa fa-user" aria-hidden="true"></i> <?php echo $evento['nombre_invitado'] . " " .  $evento['apellido_invitado']; ?></p>
+                                          </div>
+                                  <?php if($i % 2 == 1): ?>
+                                        <a href="calendario.php" class="button float-right">Ver todos</a>
+                                    </div> <!--#talleres-->
+                                  <?php endif; ?>
+                                <?php $i++; ?>
+                                <?php endforeach; ?>
+                                <?php $resultado->free(); ?>
+                          <?php  } while ($conn->more_results() && $conn->next_result());?>
 
-  <!-- Add your site or application content here -->
-  <?php include_once 'includes/templates/header.php' ?>
+
+
+                    </div> <!--.programa-evento-->
+                </div> <!--.contenedor-->
+            </div><!--.contenido-programa-->
+        </section> <!--.programa-->
 
 
 
-  <section class="seccion contenedor">
-    <h2>La mejor conferencia de diseño web en español</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, officia aliquid. Non voluptatum nemo,
-      tenetur, ducimus soluta laudantium eveniet voluptate quia sint ipsam quidem minus odio quo cupiditate, ratione
-      dolorum suscipit commodi tempora dicta! Inventore odit facilis sint provident quia.
-    </p>
-  </section>
 
-  <section class="programa">
-    <div class="contenedor-video">
-      <video autoplay loop poster="bg-talleres.jpg">
-        <source src="video/video.mp4" type="video/mp4">
-        <source src="video/video.webm" type="video/webm">
-        <source src="video/video.ogv" type="video/ogv">
-      </video>
-    </div>
+        
 
-    <div class="contenido-programa">
-      <div class="contenedor">
-        <div class="programa-evento">
-          <h2>Programa del Evento</h2>
-          <nav class="menu-programa">
-            <a href="#talleres"><i class="fas fa-code" aria-hidden="true"></i> Talleres</a>
-            <a href="#conferencias"><i class="fas fa-comments" aria-hidden="true"></i> Conferencias</a>
-            <a href="#seminarios"><i class="fas fa-university" aria-hidden="true"></i> Seminarios</a>
-          </nav>
+        <section class="precios seccion">
+            <h2>Precios</h2>
+            <div class="contenedor">
+                  <ul class="lista-precios clearfix">
+                      <li>
+                            <div class="tabla-precio">
+                                <h3>General</h3>
+                                <p class="numero">S/70</p>
+                                <ul>
+                                  <li>Lorem, ipsum.</li>
+                                  <li>Lorem, ipsum dolor.</li>
+                                  <!-- <li>Todos los talleres</li> -->
+                                </ul>
+                                <a href="#" class="button hollow">Comprar</a>
+                            </div>
+                      </li>
+                      <li>
+                            <div class="tabla-precio">
+                                <h3>Vip</h3>
+                                <p class="numero">S/150</p>
+                                <ul>
+                                  <li>Lorem, ipsum.</li>
+                                  <li>Lorem, ipsum dolor.</li>
+                                  <!-- <li>Todos los talleres</li> -->
+                                </ul>
+                                <a href="#" class="button">Comprar</a>
+                            </div>
+                      </li>
 
-          <div id="talleres" class="info-curso ocultar clearfix">
-            <div class="detalle-evento">
-              <h3>HTML5, CSS Y Javascript </h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 16:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Giovanni Cancho Buleje</p>
+                      <li>
+                            <div class="tabla-precio">
+                                <h3>Preferencial</h3>
+                                <p class="numero">S/110</p>
+                                <ul>
+                                  <li>Lorem, ipsum.</li>
+                                  <li>Lorem, ipsum dolor.</li>
+                                  <!-- <li>Todos los talleres</li> -->
+                                </ul>
+                                <a href="#" class="button hollow">Comprar</a>
+                            </div>
+                      </li>
+                  </ul>
             </div>
-            <div class="detalle-evento">
-              <h3>Responsive Web Design </h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 20:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Giovanni Cancho Buleje</p>
-            </div>
-            <a href="#" class="button float-right">Ver todos</a>
-          </div>
-          <!--#talleres-->
-        </div>
-        <!--.programa-eveno-->
-      </div>
-      <!--.contenedor-->
-    </div>
-    <!--.contenido-programa-->
-  </section>
-  <!--.programa-->
+        </section>
 
-  <section class="invitados contenedor seccion">
-    <h2>Nuestros Invitados</h2>
-    <ul class="lista-invitados clearfix">
-      <li>
-        <div class="invitado">
-          <img src="img/invitado1.jpg" alt="imagen invitado">
-          <p>Rafael Bautista</p>
-        </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado2.jpg" alt="imagen invitado">
-          <p>Rafael Bautista</p>
-        </div>
-      </li>
-      <div class="invitado">
-        <img src="img/invitado3.jpg" alt="imagen invitado">
-        <p>Rafael Bautista</p>
-      </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado4.jpg" alt="imagen invitado">
-          <p>Rafael Bautista</p>
-        </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado5.jpg" alt="imagen invitado">
-          <p>Rafael Bautista</p>
-        </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado6.jpg" alt="imagen invitado">
-          <p>Rafael Bautista</p>
-        </div>
-      </li>
-    </ul>
-  </section>
 
-  <div class="contador parallax">
-    <div class="contenedor">
-      <ul class="resumen-evento">
-        <li>
-          <p class="numero">6</p>Invitados
-        </li>
-        <li>
-          <p class="numero">15</p>Talleres
-        </li>
-        <li>
-          <p class="numero">3</p>Dias
-        </li>
-        <li>
-          <p class="numero">9</p>Conciertos
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <section class="precios seccion">
-    <h2>Precios</h2>
-    <div class="contenedor">
-      <ul class="lista-precios clearfix">
-        <li class="tabla-precio">
-          <h3>Pase por un dia</h3>
-          <p class="numero">$30</p>
-          <ul>
-            <li>Bocaditos Gratis</li>
-            <li>Todas las conferencias</li>
-            <li>Todos los talleres</li>
-          </ul>
-          <a href="#" class="button hollow">Comprar</a>
-        </li>
-        <li class="tabla-precio">
-          <h3>Todos los dias</h3>
-          <p class="numero">$50</p>
-          <ul>
-            <li>Bocaditos Gratis</li>
-            <li>Todas las conferencias</li>
-            <li>Todos los talleres</li>
-          </ul>
-          <a href="#" class="button hollow">Comprar</a>
-        </li>
-        <li class="tabla-precio">
-          <h3>Pase por dos dia</h3>
-          <p class="numero">$45</p>
-          <ul>
-            <li>Bocaditos Gratis</li>
-            <li>Todas las conferencias</li>
-            <li>Todos los talleres</li>
-          </ul>
-          <a href="#" class="button hollow">Comprar</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <div id="mapa" class="mapa"></div>
-
-  <section class="seccion">
-    <h2>Testimoniales</h2>
-    <div class="testimoniales contenedor clearfix">
-      <div class="testimonial">
-        <blockquote>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus vero nemo qui? Omnis molestiae
-            quaerat
-            perspiciatis fuga rem impedit et?</p>
-          <footer class="info-testimonial clearfix">
-            <img src="img/testimonial.jpg" alt="imagen testimonial">
-            <cite>Oswaldo Aponte Escobedo<span>Diseñador</span></cite>
-          </footer>
-        </blockquote>
-      </div>
-      <!--Testimonial-->
-      <div class="testimonial">
-        <blockquote>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus vero nemo qui? Omnis molestiae
-            quaerat
-            perspiciatis fuga rem impedit et?</p>
-          <footer class="info-testimonial clearfix">
-            <img src="img/testimonial.jpg" alt="imagen testimonial">
-            <cite>Oswaldo Aponte Escobedo<span>Diseñador</span></cite>
-          </footer>
-        </blockquote>
-      </div>
-      <!--Testimonial-->
-      <div class="testimonial">
-        <blockquote>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus vero nemo qui? Omnis molestiae
-            quaerat
-            perspiciatis fuga rem impedit et?</p>
-          <footer class="info-testimonial clearfix">
-            <img src="img/testimonial.jpg" alt="imagen testimonial">
-            <cite>Oswaldo Aponte Escobedo<span>Diseñador</span></cite>
-          </footer>
-        </blockquote>
-      </div>
-      <!--Testimonial-->
-    </div>
-  </section>
-
-  <div class="newsletter parralax">
-    <div class="contenido contenedor">
-      <p>registrate al newsletter</p>
-      <h3>limawebcamp</h3>
-      <a href="#" class="button transparente">Registro</a>
-    </div><!--contenido-->
-  </div><!--newsletter-->
-
-  <section class="seccion">
-    <h2>Faltan</h2>
-      <div class="cuenta-regresiva contenedor">
-        <ul class="clearfix">
-          <li><p class="numero">2</p>dias</li>
-          <li><p class="numero">15</p>horas</li>
-          <li><p class="numero">5</p>minutos</li>
-          <li><p class="numero">10</p>segundos</li>
-        </ul>
-      </div>
-  </section>
-
-  <?php include_once 'includes/templates/footer.php' ?>
-  
-  
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-
-</html>
+        
+  <?php include_once 'includes/templates/footer.php'; ?>

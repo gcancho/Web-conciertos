@@ -1,14 +1,6 @@
-/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+:root{
+  --color1 : #709311;
+}
 
    html {
     color: #222;
@@ -16,13 +8,7 @@
     line-height: 1.4;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
+
 
 ::-moz-selection {
     background: #b3d4fc;
@@ -142,19 +128,19 @@ h2 {
 h2::after {
   content: '';
   margin: 0 auto;
-  background-image: url(../img/separador.png);
+  /* background-image: url(../img/separador.png); */
   height: 30px;
   width: 100px;
   display: block;
 }
 h3 {
   font-size: 1.8em;
-  color: #fe4918;
+  color: var(--color1);
   font-family: 'PT Sans', sans-serif;
   margin: 0;
 }
 .button {
-  background-color: #fe4918;
+  background-color: var(--color1);
   padding: 10px 40px;
   color: #ffffff;
   text-transform: uppercase;
@@ -165,19 +151,19 @@ h3 {
    margin-top: 20px;
    display: inline-block;
    transition: all .3s ease;
-   border: 2px solid #fe4918;
+   border: 2px solid var(--color1);
 }
 .button.hollow,
 .button.hollow:hover {
   background-color: white;
-  color: #fe4918;
+  color: var(--color1);
 }
 .button.transparente {
   background-color: transparent;
   border: 2px solid #ffffff;
 }
 .button.transparente:hover {
-  border: 2px solid #fe4918;
+  border: 2px solid var(--color1);
 }
 
 ul {
@@ -192,6 +178,9 @@ ul {
   float: right;
 }
 /** Lettering**/
+h1.nombre-sitio {
+  text-shadow: 0 2px 4px #000;
+}
 h1.nombre-sitio span {
   position: relative;
   text-shadow: 0 0 30px black;
@@ -276,7 +265,7 @@ div.informacion-evento p {
   text-transform: uppercase;
 }
 div.informacion-evento p i {
-  color: #fe4918;
+  color: var(--color1);
   font-size: 2.4rem;
 }
 p.fecha {
@@ -288,6 +277,7 @@ p.ciudad {
 }
 p.slogan {
   text-transform: none!important;
+  text-shadow: 0 0 4px #000;
 }
 p.slogan span {
   font-weight: bold;
@@ -348,11 +338,11 @@ nav.navegacion-principal a {
    clear: both;
 }
 nav.navegacion-principal a:hover {
-  background-color: #fe4918;
+  background-color: var(--color1);
 }
 nav.navegacion-principal a:last-child {
-  border: 2px solid #fe4918;
-  color: #fe4918;
+  border: 2px solid var(--color1);
+  color: var(--color1);
 }
 nav.navegacion-principal a:last-child:hover {
   color: #ffffff;
@@ -448,7 +438,7 @@ nav.menu-programa a {
   font-size: 1.2em;
   position: relative;
     padding-bottom: 10px;
-    border-bottom: 1px solid #fe4918;
+    border-bottom: 1px solid var(--color1);
 }
 nav.menu-programa a.activo::after {
   position: absolute;
@@ -471,7 +461,7 @@ nav.menu-programa a.activo::after {
 }
 nav.menu-programa a i,
 div.detalle-evento p i {
-  color: #fe4918;
+  color: var(--color1);
   font-size: 1.6em;
   margin-right: 10px;
 }
@@ -531,7 +521,7 @@ div.invitado p {
   width: 100%;
   text-align: left;
   font-family: 'Oswald', sans-serif;
-  color: #fe4918;
+  color: var(--color1);
   text-transform: uppercase;
 -webkit-transition: all .5s ease-in-out;
 }
@@ -576,7 +566,7 @@ ul.resumen-evento li {
   }
 }
 p.numero {
-  color: #fe4918;
+  color: var(--color1);
   font-size: 4em;
   display: block;
   margin: 0 0 10px 0;
@@ -602,7 +592,7 @@ div.tabla-precio {
 }
 div.tabla-precio:hover {
   transform: scale(1.1);
-  border: 1px solid #fe4918;
+  border: 1px solid var(--color1);
   box-shadow: 0px 0px 50px #666;
 }
 div.tabla-precio ul li {
@@ -675,7 +665,7 @@ blockquote p::before {
   margin:0;
   padding:0;
   line-height: 1;
-  color: #fe4918;
+  color: var(--color1);
 }
 footer.info-testimonial {
   padding: 0;
@@ -689,7 +679,7 @@ footer.info-testimonial img {
 }
 footer.info-testimonial cite {
   text-align: left;    
-  color:#fe4918;
+  color:var(--color1);
   text-transform: uppercase;
   font-size: 12px;
   padding-top: 20px;
@@ -770,7 +760,7 @@ footer h3 {
   margin-bottom: 20px;
 }
 footer h3 span {
-  color: #fe4918;
+  color: var(--color1);
 }
 footer .ultimos-tweets li {
   margin-bottom: 10px;
@@ -789,7 +779,7 @@ p.copyright {
 /*** INTERNAS **/
 /* Conferencia **/
 .navegacion-principal .activo {
-  border-bottom: 2px solid #fe4918;
+  border-bottom: 2px solid var(--color1);
 }
 div.galeria a{
   display: inline-block;
@@ -808,7 +798,7 @@ form.registro label {
 h4 {
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 2px solid #fe4918;
+  border-bottom: 2px solid var(--color1);
   padding-bottom: 10px;
   font-size: 1.2em;
 }
@@ -860,7 +850,7 @@ div.paquetes .tabla-precio input {
   margin-right: 10px;
 }
 .contenido-dia > div label time {
-  color: #fe4918;
+  color: var(--color1);
   font-weight: bold;
 }
 .contenido-dia .autor {
@@ -906,7 +896,7 @@ div.resumen input {
 #suma-total {
   text-align: center;
   font-size: 2em;
-  color: #fe4918;
+  color: var(--color1);
 }
 input[disabled].button {
   opacity: .5;
@@ -920,7 +910,7 @@ input[disabled].button {
 
 /** Calendario **/
 div.calendario h3 {
-  background-color: #fe4918;
+  background-color: var(--color1);
   clear: both;
   color: white;
   text-align: center;
@@ -949,7 +939,7 @@ div.dia:hover {
   -webkit-transform: scale(1.1);
 }
 div.dia p.titulo {
-  color: #fe4918;
+  color: var(--color1);
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -957,7 +947,7 @@ div.dia p {
   font-size: 1em;
 }
 div.dia i {
-  color: #fe4918;
+  color: var(--color1);
   font-size: 1.6em;
 }
 /* Colorbox **/
@@ -1021,7 +1011,7 @@ form.invitado label {
 /** Admin **/
 section.admin nav {
   padding: 20px;
-  background-color: #fe4918;
+  background-color: var(--color1);
   margin-bottom: 30px;
 }
 section.admin nav a {

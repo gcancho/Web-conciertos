@@ -1,12 +1,12 @@
 <footer class="site-footer">
     <div class="contenedor clearfix">
           <div class="footer-informacion">
-              <h3>Sobre <span>gdlwebcamp</span></h3>
+              <h3>Sobre <span>Reactivate Lima</span></h3>
               <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.</p>
           </div>
           <div class="ultimos-tweets">
               <h3>Últimos <span>tweets</span></h3>
-               <a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#fe4918" href="https://twitter.com/JuanDevWP">Tweets by JuanDevWP</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+               <a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#fe4918" >Tweets by Reactivate Lima</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
           <div class="menu">
               <h3>Redes <span>sociales</span></h3>
@@ -21,7 +21,7 @@
     </div>
     
     <p class="copyright">
-      Todos los derechos Reservados GDLWEBCAMP 2016.
+      Todos los derechos Reservados Reactivate Lima 2021.
     </p>
   
   

@@ -1,7 +1,7 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
         <section class="seccion contenedor">
-            <h2>La mejor conferencia  de diseño web en español</h2>
+            <h2>Eventos y conciertos en Lima</h2>
             <p>
               Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.
             </p>
