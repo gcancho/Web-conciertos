@@ -104,7 +104,7 @@
             </div><!--.contenido-programa-->
         </section> <!--.programa-->
 
-
+        <?php include_once 'includes/templates/invitados.php'; ?>
 
 
         

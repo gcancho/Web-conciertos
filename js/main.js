@@ -114,7 +114,7 @@
 					for (var i = 0; i < listadoProductos.length; i++) {
 						lista_productos.innerHTML += listadoProductos[i] + '<br/>';
 					}
-					suma.innerHTML = '$ ' + totalPagar.toFixed(2);
+					suma.innerHTML = 'S/ ' + totalPagar.toFixed(2);
 
 					botonRegistro.disabled = false;
 					document.getElementById('total_pedido').value = totalPagar;
@@ -189,12 +189,12 @@
 		});
 
 		// Lettering
-		$('.nombre-sitio').lettering();
+		// $('.nombre-sitio').lettering();
 
 		// Agregar clase a Menú
-		$('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+		$('body.conferencia .navegacion-principal a:contains("Eventos")').addClass('activo');
 		$('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
-		$('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+		$('body.invitados .navegacion-principal a:contains("Artistas")').addClass('activo');
 
 		// Menu fijo
 
