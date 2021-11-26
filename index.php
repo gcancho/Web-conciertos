@@ -116,7 +116,7 @@
                       <li>
                             <div class="tabla-precio">
                                 <h3>General</h3>
-                                <p class="numero">S/70</p>
+                                <p class="numero">S/75</p>
                                 <ul>
                                   <li>Lorem, ipsum.</li>
                                   <li>Lorem, ipsum dolor.</li>
@@ -127,8 +127,8 @@
                       </li>
                       <li>
                             <div class="tabla-precio">
-                                <h3>Vip</h3>
-                                <p class="numero">S/150</p>
+                                <h3>Tribuna (4 personas)</h3>
+                                <p class="numero">S/240</p>
                                 <ul>
                                   <li>Lorem, ipsum.</li>
                                   <li>Lorem, ipsum dolor.</li>
@@ -140,8 +140,8 @@
 
                       <li>
                             <div class="tabla-precio">
-                                <h3>Preferencial</h3>
-                                <p class="numero">S/110</p>
+                                <h3>Box General (8 personas)</h3>
+                                <p class="numero">S/600</p>
                                 <ul>
                                   <li>Lorem, ipsum.</li>
                                   <li>Lorem, ipsum dolor.</li>

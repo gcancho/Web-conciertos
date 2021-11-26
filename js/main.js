@@ -86,11 +86,11 @@
 						cantEtiquetas = parseInt(etiquetas.value, 10) || 0;
 
 					var totalPagar =
-						boletosDia * 30 +
-						boletos2Dias * 45 +
-						boletoCompleto * 50 +
-						cantCamisas * 10 * 0.93 +
-						cantEtiquetas * 2;
+						boletosDia * 75 +
+						boletos2Dias * 240 +
+						boletoCompleto * 600 +
+						cantCamisas * 20 * 0.85 +
+						cantEtiquetas * 5;
 
 					var listadoProductos = [];
 
@@ -104,17 +104,17 @@
 						listadoProductos.push(boletoCompleto + ' Pases Completos');
 					}
 					if (cantCamisas >= 1) {
-						listadoProductos.push(cantCamisas + ' Camisas');
+						listadoProductos.push(cantCamisas + ' Polos');
 					}
 					if (cantEtiquetas >= 1) {
-						listadoProductos.push(cantEtiquetas + ' Etiquetas');
+						listadoProductos.push(cantEtiquetas + ' Combo de piqueos');
 					}
 					lista_productos.style.display = 'block';
 					lista_productos.innerHTML = '';
 					for (var i = 0; i < listadoProductos.length; i++) {
 						lista_productos.innerHTML += listadoProductos[i] + '<br/>';
 					}
-					suma.innerHTML = '$ ' + totalPagar.toFixed(2);
+					suma.innerHTML = 'S/ ' + totalPagar.toFixed(2);
 
 					botonRegistro.disabled = false;
 					document.getElementById('total_pedido').value = totalPagar;
@@ -269,5 +269,6 @@
 
 		$('.invitado-info').colorbox({ inline: true, width: '50%' });
 		$('.boton_newsletter').colorbox({ inline: true, width: '50%' });
+
 	});
 })();

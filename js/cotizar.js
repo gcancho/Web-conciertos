@@ -103,17 +103,17 @@
 						listadoProductos.push(boletoCompleto + ' Pases Completos');
 					}
 					if (cantCamisas >= 1) {
-						listadoProductos.push(cantCamisas + ' Camisas');
+						listadoProductos.push(cantCamisas + ' Polos');
 					}
 					if (cantEtiquetas >= 1) {
-						listadoProductos.push(cantEtiquetas + ' Etiquetas');
+						listadoProductos.push(cantEtiquetas + ' Combo de piqueos');
 					}
 					lista_productos.style.display = 'block';
 					lista_productos.innerHTML = '';
 					for (var i = 0; i < listadoProductos.length; i++) {
 						lista_productos.innerHTML += listadoProductos[i] + '<br/>';
 					}
-					suma.innerHTML = '$ ' + totalPagar.toFixed(2);
+					suma.innerHTML = 'S/ ' + totalPagar.toFixed(2);
 
 					botonRegistro.disabled = false;
 					document.getElementById('total_pedido').value = totalPagar;

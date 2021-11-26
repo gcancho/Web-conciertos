@@ -9,7 +9,7 @@
  ?>
  
  <section class="invitados contenedor seccion">
-                     <h2>Nuestros invi</h2>
+                     <h2>Nuestros Artistas</h2>
                      <ul class="lista-invitados clearfix">
                        
                          <?php while($invitados = $resultado->fetch_assoc() ){ ?>
