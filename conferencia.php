@@ -2,9 +2,7 @@
 
         <section class="seccion contenedor">
             <h2>Eventos y conciertos en Lima</h2>
-            <p>
-              Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.
-            </p>
+            
         </section> <!--seccion-->
 
     
@@ -25,7 +23,7 @@
                   <a href="img/galeria/04.jpg" data-lightbox="galeria">
                       <img src="img/galeria/thumbs/04.jpg">
                   </a>
-                  <a href="img/galeria/05.jpg" data-lightbox="galeria">
+                  <!-- <a href="img/galeria/05.jpg" data-lightbox="galeria">
                       <img src="img/galeria/thumbs/05.jpg">
                   </a>
                   <a href="img/galeria/06.jpg" data-lightbox="galeria">
@@ -33,8 +31,8 @@
                   </a>
                   <a href="img/galeria/07.jpg" data-lightbox="galeria">
                       <img src="img/galeria/thumbs/07.jpg">
-                  </a>
-                  <a href="img/galeria/08.jpg" data-lightbox="galeria">
+                  </a> -->
+                  <!-- <a href="img/galeria/08.jpg" data-lightbox="galeria">
                       <img src="img/galeria/thumbs/08.jpg">
                   </a>
                   <a href="img/galeria/09.jpg" data-lightbox="galeria">
@@ -42,7 +40,7 @@
                   </a>
                   <a href="img/galeria/10.jpg" data-lightbox="galeria">
                       <img src="img/galeria/thumbs/10.jpg">
-                  </a>
+                  </a> -->
               </div>
         </section>
         

@@ -1211,3 +1211,8 @@ table.registrados tr:nth-child(4n-1) {
         page-break-after: avoid;
     }
 }
+
+.galeria a img{
+  width: 250px  !important;
+  height: 200px  !important;
+}

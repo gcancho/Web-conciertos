@@ -3,7 +3,7 @@
         <section class="seccion contenedor">
             <h2>El mejor sitio web para conciertos dentro de Lima</h2>
             <p>
-              Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.
+              Disfruta de los principales eventos presenciales en la ciudad de Lima
             </p>
         </section> <!--seccion-->
 
@@ -86,7 +86,7 @@
                                               <h3><?php echo html_entity_decode($evento['nombre_evento']) ?></h3>
                                               <p><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $evento['hora_evento']; ?></p>
                                               <p><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo $evento['fecha_evento']; ?></p>
-                                              <p><i class="fa fa-user" aria-hidden="true"></i> <?php echo $evento['nombre_invitado'] . " " .  $evento['apellido_invitado']; ?></p>
+                                              <p style="display: none"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $evento['nombre_invitado'] . " " .  $evento['apellido_invitado']; ?></p>
                                           </div>
                                   <?php if($i % 2 == 1): ?>
                                         <a href="calendario.php" class="button float-right">Ver todos</a>
@@ -106,54 +106,10 @@
 
 
 
-
+        <?php include_once 'includes/templates/invitados.php'; ?>  
         
 
-        <section class="precios seccion">
-            <h2>Precios</h2>
-            <div class="contenedor">
-                  <ul class="lista-precios clearfix">
-                      <li>
-                            <div class="tabla-precio">
-                                <h3>General</h3>
-                                <p class="numero">S/75</p>
-                                <ul>
-                                  <li>Lorem, ipsum.</li>
-                                  <li>Lorem, ipsum dolor.</li>
-                                  <!-- <li>Todos los talleres</li> -->
-                                </ul>
-                                <a href="#" class="button hollow">Comprar</a>
-                            </div>
-                      </li>
-                      <li>
-                            <div class="tabla-precio">
-                                <h3>Tribuna (4 personas)</h3>
-                                <p class="numero">S/240</p>
-                                <ul>
-                                  <li>Lorem, ipsum.</li>
-                                  <li>Lorem, ipsum dolor.</li>
-                                  <!-- <li>Todos los talleres</li> -->
-                                </ul>
-                                <a href="#" class="button">Comprar</a>
-                            </div>
-                      </li>
-
-                      <li>
-                            <div class="tabla-precio">
-                                <h3>Box General (8 personas)</h3>
-                                <p class="numero">S/600</p>
-                                <ul>
-                                  <li>Lorem, ipsum.</li>
-                                  <li>Lorem, ipsum dolor.</li>
-                                  <!-- <li>Todos los talleres</li> -->
-                                </ul>
-                                <a href="#" class="button hollow">Comprar</a>
-                            </div>
-                      </li>
-                  </ul>
-            </div>
-        </section>
-
+       
 
         
   <?php include_once 'includes/templates/footer.php'; ?>

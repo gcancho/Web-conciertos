@@ -68,7 +68,7 @@
                                     <p>
                                         <i class="fa <?php echo $evento['icono']; ?>" aria-hidden="true"></i>
                                         <?php echo $evento['categoria']; ?></p>
-                                    <p>
+                                    <p style="display: none">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                         <?php echo $evento['invitado']; ?></p>
                                     </p>
