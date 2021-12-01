@@ -2,7 +2,8 @@
 
 <section class="seccion contenedor">
     <h2>Registro de Usuarios</h2>
-    <form id="registro" class="registro" action="pagar.php" method="post">
+    <!-- <form id="registro" class="registro" action="validar_registro.php" method="post"> -->
+    <form id="registro" name="fomulariocito" class="registro" action="https://www.paypal.com/es/cgi-bin/webscr" method="post">
         <div id="datos_usuario" class="registro caja clearfix">
             <div class="campo">
                 <label for="nombre">Nombre:</label>
@@ -148,7 +149,7 @@
                                 <input type="hidden" value="10" name="pedido_extra[camisas][precio]">
                             </div> <!--.orden-->
                             <div class="orden">
-                                <label for="etiquetas">Combo de Piqueos S/ 5 <small></small></label>
+                                <label for="etiquetas">Combo de Piqueos S/ 2 <small></small></label>
                                 <input type="number" min="0" id="etiquetas" name="pedido_extra[etiquetas][cantidad]" size="3" placeholder="0">
                                 <input type="hidden" value="2" name="pedido_extra[etiquetas][precio]">
                             </div> <!--.orden-->
@@ -174,9 +175,24 @@
                           <div id="suma-total">
                             
                           </div>
+                          
                           <input type="hidden" name="total_pedido" id="total_pedido">
                           <input type="hidden" name="total_descuento" id="total_descuento" value="total_descuento">
                           <input id="btnRegistro" type="submit" name="submit" class="button" value="Pagar">
+                          <!----------------------PAYPAL---------------------->
+                          <input type="hidden" name="cmd" value="_xclick">
+                          <!-- Email que recibirá el pago -->
+                          <input type="hidden" name="business" value="giovannicb19@paypal.com">
+                          <!-- Nombre del producto  -->
+                          <input type="hidden" name="item_name" value="Concierto">
+                          <!-- Tipo de moneda -->
+                          <input type="hidden" name="currency_code" value="USD">
+                          <!-- Precio del producto -->
+                          <input type="hidden" name="amount" id="amount" value="">
+                          <!-- Imagen de botón -->
+                          <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynowCC_LG.gif" name="submit"
+                          alt="PayPal. La forma rápida y segura de pagar en Internet.">
+                          <!----------------------FIN PAYPAL---------------------->
                       </div> <!--.total-->
                 </div><!--.caja-->
              </div> <!--#resumen-->
