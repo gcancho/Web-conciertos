@@ -159,6 +159,7 @@
 			}
 		}
 
+
 		// Mapa
 		if (document.getElementById('mapa')) {
 			var map = L.map('mapa').setView([ 20.674739, -103.387566 ], 16);

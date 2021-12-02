@@ -808,6 +808,9 @@ div.caja {
   padding: 10px;
   margin: 10px;
 }
+.caja.clearfix{
+  padding: 60px 10px;
+}
 div.campo {
   padding: 20px;
 }

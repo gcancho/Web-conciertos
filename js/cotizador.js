@@ -129,7 +129,7 @@
               
               botonRegistro.disabled = false;
               document.getElementById('total_pedido').value = totalPagar;
-					document.getElementById('amount').value = totalPagar;
+					document.getElementById('amount').value = totalPagar/4.07;
             
             }
         }
