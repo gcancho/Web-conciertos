@@ -1,17 +1,39 @@
 <?php
+     
+     if(isset($_POST['agregar-admin'])) {
 
-if(isset($_POST['agregar-admin'])){
-    $usuario = $_POST['usuario'];
-    $nombre = $_POST['nombre'];
-    $password = $_POST['password'];
+         $usuario = $_POST['usuario'];
+         $nombre = $_POST['nombre'];
+         $password = $_POST['password'];
+      
+         $opciones = array(
+             'cost' => 12
+         );
+      
+         $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
+      
+         try {
+             include_once 'funciones/funciones.php';
+             $stmt = $conn->prepare("INSERT INTO admins (usuario, hash_pass) VALUES (?, ?)");
+             $stmt->bind_param("ss", $usuario, $password_hashed);
+             $stmt->execute();
+             $id_registro = $stmt->insert_id;
+             if($id_registro > 0){
+                 $respuesta = array(
+                     'respuesta' => 'exito',
+                     'id_admin' => $id_registro
+                 );
+             }else{
+                $respuesta = array(
+                    'respuesta' => 'error',
+                );
+             }
+             $stmt->close();
+             $conn->close();
+         } catch (Exception $e) {
+             echo "Error: " . $e->getMessage();
+         }
 
-    $opciones = array(
-        'cost' => 12
-    );
-
-    $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
-
-    echo $password_hashed;
-}
-
+         die(json_encode($respuesta));
+     }
 ?>
