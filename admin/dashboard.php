@@ -102,7 +102,7 @@ include_once 'templates/header.php'; ?>
                     <!-- small box -->
                     <div class="small-box bg-green">
                         <div class="inner">
-                            <h3>$ <?php echo number_format( $ganancias['ganancias'] ); ?></h3>
+                            <h3>S/ <?php echo number_format( $ganancias['ganancias'] ); ?></h3>
                             <p>Ganancias</p>
                         </div>
                         <div class="icon">
@@ -147,7 +147,7 @@ include_once 'templates/header.php'; ?>
                                 <div class="small-box bg-maroon">
                                     <div class="inner">
                                         <h3><?php echo $regalo['etiquetas']; ?></h3>
-                                        <p>Etiquetas</p>
+                                        <p>Mascarillas</p>
                                     </div>
                                     <div class="icon">
                                         <i class="ion ion-ios-pricetag"></i>
@@ -167,7 +167,7 @@ include_once 'templates/header.php'; ?>
                                 <div class="small-box bg-aqua">
                                     <div class="inner">
                                         <h3><?php echo $regalo['plumas']; ?></h3>
-                                        <p>Plumas</p>
+                                        <p>Lapiceros</p>
                                     </div>
                                     <div class="icon">
                                         <i class="ion ion-edit"></i>

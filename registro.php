@@ -28,9 +28,8 @@
                         <h3>General</h3>
                         <p class="numero">S/ 75</p>
                         <ul>
-                          <li>Bocadillos Gratis</li>
-                          <li>Todas las conferencias</li>
-                          <li>Todos los talleres</li>
+                          <li>Regalo de cortesía</li>
+                          <li>Protocolos de bioseguridad</li>
                         </ul>
                         <div class="orden">
                             <label for="pase_dia">Boletos deseados:</label>
@@ -44,9 +43,8 @@
                         <h3>Tribuna (4 personas)</h3>
                         <p class="numero">S/240</p>
                         <ul>
-                          <li>Bocadillos Gratis</li>
-                          <li>Todas las conferencias</li>
-                          <li>Todos los talleres</li>
+                          <li>Regalo de cortesía</li>
+                          <li>Protocolos de bioseguridad</li>
                         </ul>
                         <div class="orden">
                             <label for="pase_completo">Boletos deseados:</label>
@@ -61,9 +59,8 @@
                         <h3>Box General (8 personas)</h3>
                         <p class="numero">S/ 600</p>
                         <ul>
-                          <li>Bocadillos Gratis</li>
-                          <li>Todas las conferencias</li>
-                          <li>Todos los talleres</li>
+                          <li>Regalo de cortesía</li>
+                          <li>Protocolos de bioseguridad</li>
                         </ul>
                         <div class="orden">
                             <label for="pase_dosdias">Boletos deseados:</label>
@@ -129,7 +126,7 @@
                                                 <input type="checkbox" name="registro[]" id="<?php echo $evento['id']; ?>" value="<?php echo $evento['id']; ?>">
                                                 <time><?php echo $evento['hora']; ?></time> <?php echo $evento['nombre_evento']; ?>
                                                 <br>
-                                                <span class="autor"><?php echo $evento['nombre_invitado'] . " "  . $evento['apellido_invitado']; ?></span>
+                                                <span class="autor hidden"><?php echo $evento['nombre_invitado'] . " "  . $evento['apellido_invitado']; ?></span>
                                            </label>
                                         <?php } //foreach ?>
                                    </div>
@@ -173,6 +170,9 @@
                           </div>
                           <p>Total:</p>
                           <div id="suma-total">
+                            
+                          </div>
+                          <div id="suma-total-dolares" style="text-align: center; font-size: 0.7em; ">
                             
                           </div>
                           

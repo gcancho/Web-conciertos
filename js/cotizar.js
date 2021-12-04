@@ -30,6 +30,7 @@
 
 			var lista_productos = document.getElementById('lista-productos');
 			var suma = document.getElementById('suma-total');
+			var sumaDolares = document.getElementById('suma-total-dolares');
 
 			// Extras
 			var camisas = document.getElementById('camisa_evento');
@@ -85,22 +86,22 @@
 						cantEtiquetas = parseInt(etiquetas.value, 10) || 0;
 
 					var totalPagar =
-						boletosDia * 30 +
-						boletos2Dias * 45 +
-						boletoCompleto * 50 +
+						boletosDia * 75 +
+						boletos2Dias * 240 +
+						boletoCompleto * 600 +
 						cantCamisas * 10 * 0.93 +
 						cantEtiquetas * 2;
 
 					var listadoProductos = [];
 
 					if (boletosDia >= 1) {
-						listadoProductos.push(boletosDia + ' Pases por día');
+						listadoProductos.push(boletosDia + ' Entrada general');
 					}
 					if (boletos2Dias >= 1) {
-						listadoProductos.push(boletos2Dias + ' Pases por 2 días');
+						listadoProductos.push(boletos2Dias + ' Tribuna (4 personas)');
 					}
 					if (boletoCompleto >= 1) {
-						listadoProductos.push(boletoCompleto + ' Pases Completos');
+						listadoProductos.push(boletoCompleto + ' Box General (8 personas)');
 					}
 					if (cantCamisas >= 1) {
 						listadoProductos.push(cantCamisas + ' Polos');
@@ -114,6 +115,7 @@
 						lista_productos.innerHTML += listadoProductos[i] + '<br/>';
 					}
 					suma.innerHTML = 'S/ ' + totalPagar.toFixed(2);
+					sumaDolares.innerHTML = 'S/ ' + totalPagar.toFixed(2);
 
 					botonRegistro.disabled = false;
 					document.getElementById('total_pedido').value = totalPagar;

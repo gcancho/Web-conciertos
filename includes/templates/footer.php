@@ -2,7 +2,7 @@
     <div class="contenedor clearfix">
           <div class="footer-informacion">
               <h3>Sobre <span>Reactivate Lima</span></h3>
-              <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.</p>
+              <p>Creado para ayudar a reactivar la industria musical.</p>
           </div>
           <div class="ultimos-tweets">
               <h3>Últimos <span>tweets</span></h3>

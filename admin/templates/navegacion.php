@@ -6,7 +6,7 @@
       <div class="user-panel">
         
         <div class="info">
-          <p>Giovanni Cancho</p>
+          <p>Administrador</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
