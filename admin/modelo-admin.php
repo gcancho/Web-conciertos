@@ -92,6 +92,9 @@
         }
     }
      
+    if($_POST['registro'] == 'eliminar') {
+        die(json_encode($_POST));
+    }
     if(isset($_POST['login-admin'])) {
         $usuario = $_POST['usuario'];
         $password = $_POST['password'];

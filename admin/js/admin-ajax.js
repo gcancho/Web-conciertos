@@ -26,6 +26,28 @@ $(document).ready(function(){
             }
         })
     });
+
+    //Eliminar un registro
+    $('.borrar_registro').on('click', function(e){
+        e.preventDefault();
+        var id = $(this).attr('data-id');
+        var tipo = $(this).attr('data-tipo');
+
+        $.ajax({
+            type: 'post',
+            data: {
+                'id': id,
+                'registro': 'eliminar'
+            },
+            url: 'modelo-'+tipo+'.php',
+            success: function(data){
+                console.log(data);
+            }
+        });
+    });
+
+
+
     $('#login-admin').on('submit', function(e){
         e.preventDefault()
         var datos = $(this).serializeArray();
@@ -55,4 +77,22 @@ $(document).ready(function(){
             }
         })
     });
+});
+
+$('#crear_registro').attr('disabled', true);
+
+$('#repetir_password').on('input',function(){
+    var password_nuevo = $('#password').val();
+
+    if($(this).val() == password_nuevo){
+        $('#resultado_password').text('Correcto');
+        $('#resultado_password').parents('.form-group').addClass('has-success').removeClass('has-error');
+        $('input#password').parents('.form-group').addClass('has-success').removeClass('has-error');
+        $('#crear_registro').attr('disabled', false);
+
+    }else{
+        $('#resultado_password').text('No son iguales');
+        $('#resultado_password').parents('.form-group').addClass('has-error').removeClass('has-success');
+        $('input#password').parents('.form-group').addClass('has-error').removeClass('has-success');
+    }
 });

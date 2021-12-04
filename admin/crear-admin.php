@@ -47,12 +47,17 @@
                   <label for="password">Password</label>
                   <input type="password" class="form-control" id="password" name="password" placeholder="Password para Iniciar sesión">
                 </div>
+                <div class="form-group">
+                  <label for="password">Repetir Password</label>
+                  <input type="password" class="form-control" id="repetir_password" name="repetir_password" placeholder="Password para Iniciar sesión">
+                  <span id="resultado_password" class="help-block"></span>
+                </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
                 <input type="hidden" name="registro" value="nuevo">
-                <button type="submit" class="btn btn-primary">Añadir</button>
+                <button type="submit" class="btn btn-primary" id="crear_registro">Añadir</button>
               </div>
             </form>
         </div>
