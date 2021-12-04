@@ -1,6 +1,6 @@
 <?php
      
-    if(isset($_POST['agregar-admin'])) {
+    if($_POST['registro'] == 'nuevo') {
 
         $usuario = $_POST['usuario'];
         $nombre = $_POST['nombre'];
@@ -37,7 +37,11 @@
         die(json_encode($respuesta));
     }
 
-    if(isset($_POST['login-admin'])) {
+    if($_POST['registro'] == 'actualizar') {
+        die(json_encode($_POST));
+    }
+
+    if($_POST['login-admin']) {
         $usuario = $_POST['usuario'];
         $password = $_POST['password'];
         // die(json_encode($_POST));
