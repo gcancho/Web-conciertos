@@ -14,8 +14,8 @@
       
          try {
              include_once 'funciones/funciones.php';
-             $stmt = $conn->prepare("INSERT INTO admins (usuario, hash_pass) VALUES (?, ?)");
-             $stmt->bind_param("ss", $usuario, $password_hashed);
+             $stmt = $conn->prepare("INSERT INTO admins (usuario, nombre, password) VALUES (?,?,?)");
+             $stmt->bind_param("sss", $usuario, $nombre, $password_hashed);
              $stmt->execute();
              $id_registro = $stmt->insert_id;
              if($id_registro > 0){
