@@ -1,4 +1,5 @@
 <?php
+    error_reporting(E_ALL ^ E_NOTICE);
     include_once 'funciones/funciones.php';
     $usuario = $_POST['usuario'];
     $nombre = $_POST['nombre'];
@@ -56,13 +57,19 @@
             $password = $_POST['password'];
             $id_registro = $_POST['id_registro'];
      
-            $opciones = array(
-                'cost' => 12
-            );
             try {
-                $hash_password = password_hash($password, PASSWORD_BCRYPT, $opciones);
-                $stmt = $conn->prepare('UPDATE admins SET usuario = ?, nombre = ?, password = ? WHERE id_admin = ?');
-                $stmt->bind_param("sssi", $usuario, $nombre, $hash_password, $id_registro);
+                if(empty($_POST['password'])){
+                    $stmt = $conn -> prepare('UPDATE admins SET usuario = ?, nombre = ?, editado = NOW() WHERE id_admin = ?');
+                    $stmt->bind_param("ssi", $usuario, $nombre, $id_registro);
+                }else{
+                    $opciones = array(
+                        'cost' => 12
+                    );
+                    $hash_password = password_hash($password, PASSWORD_BCRYPT, $opciones);
+                    $stmt = $conn->prepare('UPDATE admins SET usuario = ?, nombre = ?, password = ?, editado = NOW() WHERE id_admin = ?');
+                    $stmt->bind_param("sssi", $usuario, $nombre, $hash_password, $id_registro);
+                }
+
                 $stmt->execute();
                 if($stmt->affected_rows) {
                     $respuesta = array(
@@ -94,7 +101,7 @@
             $stmt = $conn->prepare("SELECT * FROM admins WHERE usuario = ?;");
             $stmt->bind_param("s", $usuario);
             $stmt->execute();
-            $stmt->bind_result($id_admin, $usuario_admin, $nombre_admin, $password_admin);//para filtrar cuando se hace un SELECT
+            $stmt->bind_result($id_admin, $usuario_admin, $nombre_admin, $password_admin, $editado);//para filtrar cuando se hace un SELECT
             if($stmt->affected_rows) {
                 $existe = $stmt->fetch();//fetch imprime los datos que obtiene de la base de datos
                 if($existe) {
